@@ -1,6 +1,4 @@
-from enum import Enum
-
-class Positions(Enum):
+class Positions:
     MOUTH_OPEN_LEFT = 0
     MOUTH_OPEN_RIGHT = 1
     MOUTH_OPEN_CENTRE = 2
@@ -13,11 +11,11 @@ class Character:
         """ filename    - character file
             player_name - player assigned character name
         """
-        self.character_name = filenname.split('.')[0]
+        self.character_name = filename.split('.')[0]
         self.player_name = player_name
         with open(filename, 'r') as f:
             all_animations = f.read()
-            self.animations_list = f.split('*******')
+            self.animations_list = all_animations.split('*******')
 
-    def get_position(position):
+    def get_position(self, position):
         return self.animations_list[position]
