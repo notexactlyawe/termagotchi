@@ -1,5 +1,8 @@
 import os
+import time
+import random
 from character import Character, Positions
+from screen import Screen
 
 def get_character_list():
     character_files = os.listdir('./characters')
@@ -19,5 +22,10 @@ if __name__ == "__main__":
     idx = character_names.index(name)
     character = Character(character_files[idx])
 
-    print(character.get_position(Positions.MOUTH_OPEN_CENTRE))
+    s = Screen()
+
+    while True:
+        s.place(character.get_position(random.choice(range(6))), 30, 0)
+        s.draw()
+        time.sleep(1)
 
