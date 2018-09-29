@@ -15,7 +15,7 @@ class Character:
         self.player_name = player_name
         with open(filename, 'r') as f:
             all_animations = f.read()
-            self.animations_list = all_animations.split('*******')
+            self.animations_list = all_animations.split('********')
 
     def get_position(self, position):
         return self.animations_list[position]
