@@ -30,5 +30,5 @@ class Screen:
             print()
         for line in self.grid:
             print(''.join(line))
-        print("-----------------------------------------")
+        print("-"*self.width)
         self.clear()
