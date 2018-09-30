@@ -3,7 +3,7 @@ import shutil
 
 class Screen:
     def __init__(self):
-        self.screen_height, self.width = shutil.get_terminal_size()
+        self.width, self.screen_height = shutil.get_terminal_size()
         self.height = 10
         self.clear()
 
