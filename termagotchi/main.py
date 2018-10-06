@@ -4,10 +4,12 @@ import random
 from character import Character, Positions
 from screen import Screen
 
+CHARACTER_DIR = '../characters/'
+
 def get_character_list():
-    character_files = os.listdir('./characters')
+    character_files = os.listdir(CHARACTER_DIR)
     character_names = [name.split('.')[0] for name in character_files]
-    character_files = ['characters/' + name for name in character_files]
+    character_files = [CHARACTER_DIR + name for name in character_files]
     return character_names, character_files
 
 def random_walk(character, screen, prev_x):
